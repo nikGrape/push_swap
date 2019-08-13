@@ -3,31 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   print_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 17:58:05 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/12 18:08:54 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/08/13 00:31:42 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "utils.h"
 
 void	print_stack(int *stack_a, int *stack_b)
 {
-	int i;
-	int j;
+	int len;
 
-	i = A_LEN;
-	j = B_LEN;
-	while (i > 0 || j > 0)
+	len = MAX(A_LEN, B_LEN);
+	ft_printf("{cyan}_________{eoc}\n");
+	while (len > 0)
 	{
-		if (i > 0)
-			ft_printf("%d", stack_a[i]);
-		if (j > 0)
-			ft_printf("\t%d", stack_b[j]);
+		if (len > 0 && len <= A_LEN)
+			ft_printf("%d", stack_a[len]);
+		if (len > 0 && len <= B_LEN)
+			ft_printf("\t%d", stack_b[len]);
 		ft_printf("\n");
-		i--;
-		j--;
+		len--;
 	}
-	ft_printf("{red}a\tb{eoc}\n");
+	ft_printf("{cyan}^ BOTOM ^\n");
+	ft_printf("a\tb{eoc}\n");
+	//ft_printf("{cyan}%d<-LEN->%d{eoc}\n", A_LEN, B_LEN);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 15:14:43 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/12 18:37:35 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/08/12 23:46:55 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define UTILS_H
 
 # include "../libft/libft.h"
+# define LEN stack[0]
 # define A_LEN stack_a[0]
 # define B_LEN stack_b[0]
 
@@ -41,6 +42,8 @@ void	rra(int *stack_a);
 void	rrb(int *stack_b);
 void	rrr(int *stack_a, int *stack_b);
 
-int		*fill_stack(int len, char **arr);
+int		*init_a(int len, char **arr);
+int		*init_b(int len);
+void	print_stack(int *stack_a, int *stack_b);
 
 #endif

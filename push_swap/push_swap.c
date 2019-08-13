@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 12:10:52 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/12 19:21:03 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/08/13 01:24:17 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 int		main(int argc, char **argv)
 {
-	int *stack_a;
-	int *stack_b;
+	// int *stack_a;
+	// int *stack_b;
 
-	stack_a = fill_stack(argc - 1, ++argv);
-	stack_b = (int *)malloc(sizeof(int) * argc);
-	B_LEN = 0;
-	rr(stack_a, stack_b);
-	print_stack(stack_a, stack_b);
+	// stack_a = init_a(argc - 1, ++argv);
+	// stack_b = init_b(argc);
+	//print_stack(stack_a, stack_b);
+	ft_printf("pb pb sa rra pa ra pa ra");
 }
