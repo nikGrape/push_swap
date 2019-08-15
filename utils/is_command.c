@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   is_command.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/12 12:07:35 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/13 01:43:42 by Nik              ###   ########.fr       */
+/*   Created: 2019/08/13 11:07:43 by Nik               #+#    #+#             */
+/*   Updated: 2019/08/14 10:40:06 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
+#include "utils.h"
+#define COMMANDS "sa sb ss pa pb ra rb rr rra rrb rrr"
+//				 "0  3  6  9  12 15 18 21 24  28  32"
 
-# include "../libft/libft.h"
-# include "../utils/utils.h"
-# define LEN stack[0]
+int		is_command(char *cmd)
+{
+	int len;
 
-int		get_command(int *stack_a, int *stack_b);
-int		is_command(char *cmd);
-int		commander(char *cmd, int *stack_a, int *stack_b);
-int		multi_commander(char *cmd, int *stack_a, int *stack_b);
-void	is_sorted(int *stack_a, int *stack_b);
-
-#endif
+	len = ft_strlen(cmd);
+	if (ft_strstr(COMMANDS, cmd) && len > 1 && len < 4 && !ft_strchr(cmd, ' '))
+		return (1);
+	ft_printf("{red}%s{eoc} - not a command\n", cmd);
+	return (0);
+}

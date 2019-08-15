@@ -6,7 +6,7 @@
 /*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 18:26:04 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/12 23:14:31 by Nik              ###   ########.fr       */
+/*   Updated: 2019/08/14 11:13:06 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,7 @@ void			*ft_memdup(void const *src, size_t len);
 int				ft_wdcounter(char const *str, char c);
 int				ft_strindex(char *haystack, char *needle);
 void			ft_swap(char *c1, char *c2);
+void			ft_swapi(int *c1, int *c2);
 char			*ft_ftoa(double nbr, unsigned int precision);
 char			*ft_ftoa_long(long double nbr, unsigned int precision);
 char			*ft_itoa_unsigned(size_t nbr);

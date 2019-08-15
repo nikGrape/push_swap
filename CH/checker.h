@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/12 12:10:07 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/12 22:38:34 by Nik              ###   ########.fr       */
+/*   Created: 2019/08/12 12:07:35 by vinograd          #+#    #+#             */
+/*   Updated: 2019/08/14 10:52:31 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef CHECKER_H
+# define CHECKER_H
 
 # include "../libft/libft.h"
 # include "../utils/utils.h"
+
+int		get_command(int *stack_a, int *stack_b);
 
 #endif

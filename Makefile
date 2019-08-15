@@ -6,17 +6,17 @@
 #    By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/13 01:31:26 by Nik               #+#    #+#              #
-#    Updated: 2019/08/13 01:39:20 by Nik              ###   ########.fr        #
+#    Updated: 2019/08/14 11:26:59 by Nik              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CHECKER=checker.out
+CHECKER=checker
 
-PUSH_SWAP=push_swap.out
+PUSH_SWAP=push_swap
 
-SRCS1=checker/*.c
+SRCS1=CH/*.c
 
-SRCS2=push_swap/*.c
+SRCS2=PS/*.c
 
 INCLUDES=libft/libft.a utils/*.c
 

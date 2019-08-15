@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_stack.c                                      :+:      :+:    :+:   */
+/*   booble_rsort.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/12 17:58:05 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/14 10:36:29 by Nik              ###   ########.fr       */
+/*   Created: 2019/08/14 21:57:39 by Nik               #+#    #+#             */
+/*   Updated: 2019/08/14 22:18:54 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "push_swap.h"
 
-void	print_stack(int *stack_a, int *stack_b, int steps)
+void	booble_rsort(int *stack)
 {
-	int len;
+	int i;
+	int j;
 
-	len = MAX(A_LEN, B_LEN);
-	ft_printf("{cyan}_________{eoc}\n");
-	while (len > 0)
+	i = 1;
+	while (i <= LEN)
 	{
-		if (len > 0 && len <= A_LEN)
-			ft_printf("%d", stack_a[len]);
-		if (len > 0 && len <= B_LEN)
-			ft_printf("\t%d", stack_b[len]);
-		ft_printf("\n");
-		len--;
+		j = i;
+		while (j <= LEN)
+		{
+			if (stack[i] > stack[j])
+				ft_swapi(&stack[i], &stack[j]);
+			j++;
+		}
+		i++;
 	}
-	ft_printf("{cyan}^ BOTOM ^\n");
-	ft_printf("a%4d   b{eoc}\n", steps);
 }

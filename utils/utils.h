@@ -6,9 +6,16 @@
 /*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 15:14:43 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/12 23:46:55 by Nik              ###   ########.fr       */
+/*   Updated: 2019/08/14 11:17:05 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+**	how indexes in stack works!
+**	arr		 0	1 2 3 4 5 6 ... 10
+**	stack	len|1 2 3 4 5 6 ... 10 <-top
+**	expmpl	  7|1 2 3 4 5 6 9 (1 is the bottob of the stack, 9 is the top)
+ */
 
 #ifndef UTILS_H
 # define UTILS_H
@@ -43,7 +50,14 @@ void	rrb(int *stack_b);
 void	rrr(int *stack_a, int *stack_b);
 
 int		*init_a(int len, char **arr);
+void	duplicates_check(int *stack);
+char	*input_checker(char *s);
 int		*init_b(int len);
-void	print_stack(int *stack_a, int *stack_b);
+
+void	print_stack(int *stack_a, int *stack_b, int steps);
+int		is_sorted(int *stack_a, int *stack_b);
+
+int		multi_commander(char *cmd, int *stack_a, int *stack_b);
+int		is_command(char *cmd);
 
 #endif
