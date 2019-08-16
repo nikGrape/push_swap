@@ -6,7 +6,7 @@
 /*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 12:10:07 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/14 22:19:06 by Nik              ###   ########.fr       */
+/*   Updated: 2019/08/15 19:51:08 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@
 # include "../libft/libft.h"
 # include "../utils/utils.h"
 
-void	booble_sort(int *stack);
-void	booble_rsort(int *stack);
 int		*copy_stack(int *stack);
-int		get_value(int *stack, int *goal);
-char	*best_cmd(int *stack_a, int *stack_b, int *goal);
+char	*best_cmd(int *stack_a, int *stack_b);
+void	undo(char *cmd, int *stack_a, int *stack_b);
 
 #endif
