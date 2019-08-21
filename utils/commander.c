@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   commander.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 00:35:41 by Nik               #+#    #+#             */
-/*   Updated: 2019/08/14 11:00:42 by Nik              ###   ########.fr       */
+/*   Updated: 2019/08/20 16:34:32 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 #define COMMANDS "sa sb ss pa pb ra rb rr rra rrb rrr"
+
 //				 "0  3  6  9  12 15 18 21 24  28  32"
 
 static int	commander(char *cmd, int *stack_a, int *stack_b)
@@ -44,7 +45,6 @@ static int	commander(char *cmd, int *stack_a, int *stack_b)
 	else
 		return (0);
 	return (1);
-	
 }
 
 int		multi_commander(char *cmd, int *stack_a, int *stack_b)
@@ -55,12 +55,16 @@ int		multi_commander(char *cmd, int *stack_a, int *stack_b)
 
 	steps = 0;
 	i = 0;
-	cmds = ft_strsplit(cmd, ' ');//leaks
+	cmds = ft_strsplit(cmd, ' ');
 	while (cmds[i])
 	{
 		if (is_command(cmds[i]))
 			steps += commander(cmds[i], stack_a, stack_b);
 		i++;
 	}
+	i = 0;
+	while (cmds[i])
+		free(cmds[i++]);
+	free(cmds);
 	return (steps);
 }

@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 12:08:53 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/14 20:52:18 by Nik              ###   ########.fr       */
+/*   Updated: 2019/08/20 20:34:53 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 **	The first argument should be at the top of the stack
 */
+
 #include "checker.h"
 
 int		main(int argc, char **argv)
@@ -30,15 +31,6 @@ int		main(int argc, char **argv)
 	ft_printf("%s\n", is_sorted(stack_a, stack_b) ?\
 	"{green}OK{eoc}" : "{red}KO{eoc}");
 	ft_printf("steps: %d\n", steps);
-}
-
-void	print_help()
-{
-	ft_printf("sa/sb/ss - swap the first two numbers in the stack a/b/both\n");
-	ft_printf("pa - push the first number from stack b to stack a\n");
-	ft_printf("pa - push the first number from stack a to stack b\n");
-	ft_printf("ra/rb/rr - put the fist number to the bottom of the stack a/b/both\n");
-	ft_printf("rra/rrb/rrr - put the last number to the top of the stack a/b/both\n");
 }
 
 int		get_command(int *stack_a, int *stack_b)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 19:27:11 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/14 10:53:39 by Nik              ###   ########.fr       */
+/*   Updated: 2019/08/19 16:39:55 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,13 @@ int		is_sorted(int *stack_a, int *stack_b)
 	int i;
 
 	i = A_LEN;
+	if (B_LEN != 0)
+		return (0);
 	while (i > 1)
 	{
-		if (stack_a[i] >= stack_a[i - 1] || B_LEN != 0)
-		{
-//			ft_printf("{red}KO{eoc}\n");
+		if (stack_a[i] >= stack_a[i - 1])
 			return (0);
-		}
 		i--;
 	}
 	return (1);
-	//ft_printf("{green}OK{eoc}\n");
 }

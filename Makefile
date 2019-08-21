@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+         #
+#    By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/13 01:31:26 by Nik               #+#    #+#              #
-#    Updated: 2019/08/14 11:26:59 by Nik              ###   ########.fr        #
+#    Updated: 2019/08/20 21:54:37 by vinograd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,3 +36,9 @@ fclean: clean
 	@make -C libft/ fclean
 
 re: fclean all
+
+push:
+	gcc -o $(PUSH_SWAP) $(FLAGS) $(SRCS2) $(INCLUDES)
+
+checker:
+	gcc -o $(CHECKER) $(FLAGS) $(SRCS1) $(INCLUDES)
