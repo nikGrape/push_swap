@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fine_index.c                                       :+:      :+:    :+:   */
+/*   finder.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/20 23:44:07 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/21 00:17:16 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/08/21 23:38:35 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,55 +17,62 @@ static int	is_fit(int nbr, int from, int to)
 	return (nbr > from && nbr < to);
 }
 
-int		find_index_of_smolest_nbr(int from, int to, int *stack)
+int			find_index_of_bigest_nbr(int from, int to, int *stack)
 {
 	int i;
 	int index;
-	int min;
+	int max;
 
 	i = 1;
 	index = 0;
-	min = __INT_MAX__;
+	max = -__INT_MAX__;
 	while (i <= LEN)
 	{
-		if ((stack[i] < min) && is_fit(stack[i], from, to))
+		if ((stack[i] > max) && is_fit(stack[i], from, to))
 			index = i;
 		i++;
 	}
 	return (index);
 }
 
-int		lol(int *stack_a, int *stack_b)
+int		find_max(int *stack, int index)
 {
-	int index;
 	int i;
+	int max;
+	int max_index;
 
-	i = 0;
-	while (B_LEN > 0)
+	max = stack[1];
+	max_index = 1;
+	i = 2;
+	while (i <= LEN)
 	{
-		index = find_index_of_smolest_nbr(stack_a[1], stack_a[A_LEN], stack_b);
-		if (index == 0)
+		if (stack[i] > max)
 		{
-			multi_commander("ra", stack_a, stack_b);
-			i++;
-			continue ;
+			max = stack[i];
+			max_index = i;
 		}
-		else if (index <= B_LEN / 2)
-		{
-			i += index;
-			while (index--)
-				multi_commander("rrb", stack_a, stack_b);
-		}
-		else
-		{
-			index = B_LEN - index;
-			i += index;
-			while (index--)
-				multi_commander("rb", stack_a, stack_b);
-		}
-		multi_commander("pa ra", stack_a, stack_b);
-		//print_stack(stack_a, stack_b, i);
-		i += 2;
+		i++;
 	}
-	return (i);
+	return (index) ? max_index : max;
+}
+
+int		find_min(int *stack, int index)
+{
+	int i;
+	int min;
+	int min_index;
+
+	min = stack[1];
+	min_index = 1;
+	i = 2;
+	while (i <= LEN)
+	{
+		if (stack[i] < min)
+		{
+			min = stack[i];
+			min_index = i;
+		}
+		i++;
+	}
+	return (index) ? min_index : min;
 }

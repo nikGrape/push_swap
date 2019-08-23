@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   booble_sort.c                                      :+:      :+:    :+:   */
+/*   total_commander.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/19 15:01:48 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/19 16:21:03 by vinograd         ###   ########.fr       */
+/*   Created: 2019/08/21 14:23:17 by vinograd          #+#    #+#             */
+/*   Updated: 2019/08/21 14:40:07 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	booble_sort(int *stack)
+char	*totle_commander(char *cmd, int *stack_a, int *stack_b)
 {
-	int i;
-	int j;
+	static char *result;
 
-	i = 1;
-	while (i <= LEN)
+	if (cmd == NULL)
+		return (result);
+	if (result == NULL)
+		result = ft_strdup(cmd);
+	else
 	{
-		j = i;
-		while (j <= LEN)
-		{
-			if (stack[j] > stack[i])
-				ft_swapi(&stack[j], &stack[i]);
-			j++;
-		}
-		i++;
+		result = ft_strjoin_free(result, " ", 1);
+		result = ft_strjoin_free(result, cmd, 1);
 	}
+	multi_commander(cmd, stack_a, stack_b);
+	return (result);
 }

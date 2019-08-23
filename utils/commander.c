@@ -6,7 +6,7 @@
 /*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 00:35:41 by Nik               #+#    #+#             */
-/*   Updated: 2019/08/20 16:34:32 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/08/21 16:31:16 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,9 @@ int		multi_commander(char *cmd, int *stack_a, int *stack_b)
 	{
 		if (is_command(cmds[i]))
 			steps += commander(cmds[i], stack_a, stack_b);
+		free(cmds[i]);
 		i++;
 	}
-	i = 0;
-	while (cmds[i])
-		free(cmds[i++]);
 	free(cmds);
 	return (steps);
 }

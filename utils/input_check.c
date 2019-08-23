@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   input_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 13:32:28 by Nik               #+#    #+#             */
-/*   Updated: 2019/08/13 17:40:36 by Nik              ###   ########.fr       */
+/*   Updated: 2019/08/21 16:33:45 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-static int is_number(char *s)
+static int	is_number(char *s)
 {
 	while (*s)
 	{
@@ -23,7 +23,7 @@ static int is_number(char *s)
 	return (1);
 }
 
-char	*get_valid(char *s)
+static char	*get_valid(char *s)
 {
 	char *new;
 
@@ -45,7 +45,7 @@ char	*get_valid(char *s)
 	return (NULL);
 }
 
-char	*num_convert(char *s)
+static char	*num_convert(char *s)
 {
 	if (!ft_strcmp(s, "zero"))
 		return ("0");
@@ -73,7 +73,7 @@ char	*num_convert(char *s)
 		return (get_valid(s));
 }
 
-char	*input_checker(char *s)
+char		*input_checker(char *s)
 {
 	char *ret;
 

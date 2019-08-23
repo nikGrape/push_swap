@@ -6,7 +6,7 @@
 /*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 12:08:53 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/20 20:34:53 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/08/21 17:25:31 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int		get_command(int *stack_a, int *stack_b)
 	int		steps;
 
 	steps = 0;
-	while (get_next_line(0, &cmd))
+	while (!is_sorted(stack_a, stack_b) && get_next_line(0, &cmd))
 	{
 		if (!ft_strcmp(cmd, "end"))
 			break ;

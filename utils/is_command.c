@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   is_command.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 11:07:43 by Nik               #+#    #+#             */
-/*   Updated: 2019/08/14 10:40:06 by Nik              ###   ########.fr       */
+/*   Updated: 2019/08/21 16:35:33 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 #define COMMANDS "sa sb ss pa pb ra rb rr rra rrb rrr"
-//				 "0  3  6  9  12 15 18 21 24  28  32"
 
 int		is_command(char *cmd)
 {

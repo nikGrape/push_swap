@@ -6,27 +6,31 @@
 /*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 12:10:07 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/21 00:11:16 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/08/22 21:15:42 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # define COMMANDS "sa sb ss pa pb ra rb rr rra rrb rrr"
+# define A_TOP stack_a[A_LEN]
+# define A_BOTTOM stack_a[1]
+# define B_TOP stack_b[B_LEN]
+# define B_BOTTOM stack_b[1]
 
 # include "../libft/libft.h"
 # include "../utils/utils.h"
 
-int		*copy_stack(int *stack);
-char	*best_cmd(int *stack_a, int *stack_b);
+int		stack_sort(int *stack_a, int *stack_b);
+int		find_index_of_bigest_nbr(int from, int to, int *stack);
 void	undo(char *cmd, int *stack_a, int *stack_b);
-void	booble_sort(int *stack);
-void	booble_rsort(int *stack);
-char	*get_oposid(char *cmd);
-char	*next_cmd(int *stack_a, int *stack_b, int *goal);
-int		fill_b(int *stack_a, int *stack_b);
-int		find_index_of_smolest_nbr(int from, int to, int *stack);
-int		lol(int *stack_a, int *stack_b);
+int		is_in_right_order(int *stack_a);
+int		sort_b(int *stack_a, int *stack_b);
 int		find_min(int *stack, int index);
+int		find_max(int *stack, int index);
+char	*totle_commander(char *cmd, int *stack_a, int *stack_b);
+int		does_sa_work(int *stack_a, int *stack_b);
+int		push_nbr_from_b(int *stack_a, int *stack_b);
+void	rsort(int *stack);
 
 #endif

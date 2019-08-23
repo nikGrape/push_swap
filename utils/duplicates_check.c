@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   duplicates_check.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 11:20:00 by Nik               #+#    #+#             */
-/*   Updated: 2019/08/14 11:02:06 by Nik              ###   ########.fr       */
+/*   Updated: 2019/08/21 16:34:27 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-int		is_duplicate(int n, int *arr)
+static int		is_duplicate(int n, int *arr)
 {
 	int i;
 
@@ -26,7 +26,7 @@ int		is_duplicate(int n, int *arr)
 	return (0);
 }
 
-void	del_duplicate(int *stack, int num)
+static void		del_duplicate(int *stack, int num)
 {
 	while (++num <= LEN)
 	{
@@ -36,7 +36,7 @@ void	del_duplicate(int *stack, int num)
 	LEN--;
 }
 
-void	duplicate_hendler(int *stack, int num)
+static void		duplicate_hendler(int *stack, int num)
 {
 	char *answer;
 
@@ -52,7 +52,7 @@ void	duplicate_hendler(int *stack, int num)
 		else if (!ft_strcmp(answer, "no"))
 		{
 			ft_printf("{red}ERROR{eoc} - invalid input\n");
-			free (answer);
+			free(answer);
 			exit(1);
 		}
 		ft_printf("would you like to del it (yes/no)\t");
@@ -61,7 +61,7 @@ void	duplicate_hendler(int *stack, int num)
 	free(answer);
 }
 
-void	duplicates_check(int *stack)
+void			duplicates_check(int *stack)
 {
 	int		*new;
 	int		i;
