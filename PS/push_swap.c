@@ -6,7 +6,7 @@
 /*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 12:10:52 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/22 21:15:53 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/08/26 18:07:27 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,9 @@ int		main(int argc, char **argv)
 
 	stack_a = init_a(argc - 1, ++argv);
 	stack_b = init_b(argc);
-	steps = stack_sort(stack_a, stack_b);
-	//print_stack(stack_a, stack_b, steps);
+	clean_stack_a(stack_a, stack_b);
+	print_stack(stack_a, stack_b, steps);
+	stack_sort(stack_a, stack_b);
 	//print_a(stack_a);
 	res = totle_commander(NULL, NULL, NULL);
 	//ft_printf("%s\n", res);
