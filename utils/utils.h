@@ -6,7 +6,7 @@
 /*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 15:14:43 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/14 11:17:05 by Nik              ###   ########.fr       */
+/*   Updated: 2019/08/28 10:43:01 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int		*init_b(int len);
 void	print_stack(int *stack_a, int *stack_b, int steps);
 int		is_sorted(int *stack_a, int *stack_b);
 
-int		multi_commander(char *cmd, int *stack_a, int *stack_b);
+int		commander(char *cmd, int *stack_a, int *stack_b);
 int		is_command(char *cmd);
 
 #endif

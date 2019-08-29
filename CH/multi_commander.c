@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   multi_commander.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/12 12:07:35 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/28 11:19:20 by Nik              ###   ########.fr       */
+/*   Created: 2019/08/28 10:42:14 by Nik               #+#    #+#             */
+/*   Updated: 2019/08/28 10:53:31 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
+#include "checker.h"
 
-# include "../libft/libft.h"
-# include "../utils/utils.h"
+int		multi_commander(char *cmd, int *stack_a, int *stack_b)
+{
+	char	**cmds;
+	int		steps;
+	int		i;
 
-int		get_command(int *stack_a, int *stack_b);
-void	print_help();
-int		multi_commander(char *cmd, int *stack_a, int *stack_b);
-
-#endif
+	steps = 0;
+	i = 0;
+	cmds = ft_strsplit(cmd, ' ');
+	while (cmds[i])
+	{
+		if (is_command(cmds[i]))
+			steps += commander(cmds[i], stack_a, stack_b);
+		free(cmds[i]);
+		i++;
+	}
+	free(cmds);
+	return (steps);
+}

@@ -3,28 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   total_commander.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/21 14:23:17 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/21 14:40:07 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/08/28 22:08:54 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-char	*totle_commander(char *cmd, int *stack_a, int *stack_b)
+int		is_replaceable(char *res, char *cmd)
 {
-	static char *result;
+	int len;
+
+	len = ft_strlen(res);
+	if (ft_strequ(cmd, "ra") && ft_strequ(res + len - 3, "rb"))
+		return (1);
+	return (0);
+}
+
+char	*totle_commander2(char *cmd, int *stack_a, int *stack_b)
+{
+	static char *res;
 
 	if (cmd == NULL)
-		return (result);
-	if (result == NULL)
-		result = ft_strdup(cmd);
+		return (res);
+	if (!res)
+		res = ft_strdup(cmd);
 	else
 	{
-		result = ft_strjoin_free(result, " ", 1);
-		result = ft_strjoin_free(result, cmd, 1);
+		ft_strjoin_free(res, " ", 1);
+		ft_strjoin_free(res, cmd, 1);
 	}
-	multi_commander(cmd, stack_a, stack_b);
-	return (result);
+	commander(cmd, stack_a, stack_b);
+	return (res);
+}
+
+void	totle_commander(char *cmd, int *stack_a, int *stack_b)
+{
+	ft_printf("%s ", cmd);
+	commander(cmd, stack_a, stack_b);
 }

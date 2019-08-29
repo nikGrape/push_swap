@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   clean_stack_a.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/20 21:12:01 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/26 16:57:59 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/08/28 11:15:33 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,40 +39,33 @@ int		is_a_sorted(int *stack_a)
 
 int		push_nbr_from_b(int *stack_a, int *stack_b)
 {
-	int index;
-
-	if (!(index = find_index_of_bigest_nbr(A_BOTTOM, A_TOP, stack_b)))
-		return (0);
-	if (index <= B_LEN / 2)
+	if (B_TOP > A_BOTTOM && B_TOP < A_TOP)
+		totle_commander("pa", stack_a, stack_b);
+	else if (stack_b[B_LEN - 1] > A_BOTTOM && stack_b[B_LEN - 1] < A_TOP)
 	{
-		while (index--)
-			totle_commander("rrb", stack_a, stack_b);
+		totle_commander("rb", stack_a, stack_b);
+		totle_commander("pa", stack_a, stack_b);
+	}
+	else if (B_BOTTOM > A_BOTTOM && B_BOTTOM < A_TOP)
+	{
+		totle_commander("rrb", stack_a, stack_b);
+		totle_commander("pa", stack_a, stack_b);
 	}
 	else
-	{
-		index = B_LEN - index;
-		while (index--)
-			totle_commander("rb", stack_a, stack_b);
-	}
-	totle_commander("pa", stack_a, stack_b);
+		return (0);
 	return (1);
 }
 
-int		clean_stack_a(int *stack_a, int *stack_b)
+void	fill_stack_b(int *stack_a, int *stack_b)
 {
 	while (!is_a_sorted(stack_a))
 	{
-		while(push_nbr_from_b(stack_a, stack_b) != 0);
+		while (push_nbr_from_b(stack_a, stack_b));
 		if (is_in_right_order(stack_a))
 			totle_commander("ra", stack_a, stack_b);
 		else if (does_sa_work(stack_a, stack_b))
 			totle_commander("sa", stack_a, stack_b);
 		else
-		{
 			totle_commander("pb", stack_a, stack_b);
-			//sort_b(stack_a, stack_b);		//depend on order, can improve or spoil
-		}
-		//print_stack(stack_a, stack_b, 0);
 	}
-	return (1);
 }

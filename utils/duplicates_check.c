@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   duplicates_check.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 11:20:00 by Nik               #+#    #+#             */
-/*   Updated: 2019/08/21 16:34:27 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/08/28 10:52:18 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ static void		del_duplicate(int *stack, int num)
 	LEN--;
 }
 
-static void		duplicate_hendler(int *stack, int num)
+static int		duplicate_hendler(int *stack, int num)
 {
 	char *answer;
 
-	ft_printf("your input contains duplicate {red}%d{eoc}\n", stack[num]);
+	ft_printf("your input contains duplicates\n");
 	ft_printf("would you like to del it (yes/no)\t");
 	while (get_next_line(0, &answer))
 	{
@@ -59,6 +59,7 @@ static void		duplicate_hendler(int *stack, int num)
 		free(answer);
 	}
 	free(answer);
+	return (1);
 }
 
 void			duplicates_check(int *stack)
@@ -66,13 +67,20 @@ void			duplicates_check(int *stack)
 	int		*new;
 	int		i;
 	int		num;
+	int		answer;
 
 	i = 1;
+	answer = 0;
 	new = init_b(LEN);
 	while (i <= LEN)
 	{
 		if (is_duplicate(stack[i], new))
-			duplicate_hendler(stack, i);
+		{
+			if (!answer)
+				answer = duplicate_hendler(stack, i);
+			else
+				del_duplicate(stack, i);
+		}
 		else
 		{
 			new[0]++;
@@ -81,4 +89,5 @@ void			duplicates_check(int *stack)
 			i++;
 		}
 	}
+	free(new);
 }
