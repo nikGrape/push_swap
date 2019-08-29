@@ -6,7 +6,7 @@
 /*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 12:10:07 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/28 11:15:42 by Nik              ###   ########.fr       */
+/*   Updated: 2019/08/29 01:15:35 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ int		find_min(int *stack, int index);
 int		find_max(int *stack, int index);
 void	totle_commander(char *cmd, int *stack_a, int *stack_b);
 int		does_sa_work(int *stack_a, int *stack_b);
+void	rotation(int *stack_a, int *stack_b, int index);
 
 #endif

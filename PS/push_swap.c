@@ -6,7 +6,7 @@
 /*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 12:10:52 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/28 21:03:26 by Nik              ###   ########.fr       */
+/*   Updated: 2019/08/29 01:35:14 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,7 @@ int		main(int argc, char **argv)
 	int		*stack_b;
 
 	stack_a = init_a(argc - 1, ++argv);
-	stack_b = init_b(argc);
+	stack_b = init_b(argc);//add check input!
 	fill_stack_b(stack_a, stack_b);
 	stack_sort(stack_a, stack_b);
-	//print_stack(stack_a, stack_b, 0);
 }
