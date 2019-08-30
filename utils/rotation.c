@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotation.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/29 00:59:43 by Nik               #+#    #+#             */
-/*   Updated: 2019/08/29 22:01:26 by Nik              ###   ########.fr       */
+/*   Updated: 2019/08/30 14:57:18 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,18 @@ void		a_rotation(int *stack_a, int *stack_b, int steps)
 	}
 }
 
+void		rr_rotation(int *stack_a, int *stack_b, int a_steps, int b_steps)
+{
+	a_steps = A_LEN - a_steps;
+	b_steps = B_LEN - b_steps;
+	while (a_steps-- && b_steps--)
+		totle_commander("rr", stack_a, stack_b);
+	while (a_steps-- >= 0)
+		totle_commander("ra", stack_a, stack_b);
+	while (b_steps-- > 0)
+		totle_commander("rb", stack_a, stack_b);
+}
+
 void		rotation(int *stack_a, int *stack_b, int index)
 {
 	int a_steps;
@@ -74,14 +86,7 @@ void		rotation(int *stack_a, int *stack_b, int index)
 	}
 	else if (!(a_steps <= A_LEN / 2) && !(index <= B_LEN / 2))
 	{
-		a_steps = A_LEN - a_steps;
-		b_steps = B_LEN - b_steps;
-		while (a_steps-- && b_steps--)
-			totle_commander("rr", stack_a, stack_b);
-		while (a_steps-- >= 0)
-			totle_commander("ra", stack_a, stack_b);
-		while (b_steps-- > 0)
-			totle_commander("rb", stack_a, stack_b);
+		rr_rotation(stack_a, stack_b, a_steps, b_steps);
 	}
 	else
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   flag_analizer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/29 20:54:15 by Nik               #+#    #+#             */
-/*   Updated: 2019/08/29 21:50:25 by Nik              ###   ########.fr       */
+/*   Updated: 2019/08/30 14:43:26 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int		flag_analizer(char **argv, t_push *flags)
 		else
 			ft_error("invalid flag");
 		if (!argv[++i])
-			break;
+			break ;
 	}
 	return (i);
 }

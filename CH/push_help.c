@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_help.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/29 21:32:41 by Nik               #+#    #+#             */
-/*   Updated: 2019/08/30 02:01:59 by Nik              ###   ########.fr       */
+/*   Updated: 2019/08/30 14:41:06 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,11 @@ int		print_msg(int msg)
 	return (1);
 }
 
-
 void	push_help(int *stack_a, int *stack_b)
 {
-	int *copy_a;
-	int *copy_b;
-	static int msg;
+	int			*copy_a;
+	int			*copy_b;
+	static int	msg;
 
 	copy_a = copy_stack(stack_a, A_LEN + B_LEN);
 	copy_b = copy_stack(stack_b, A_LEN + B_LEN);

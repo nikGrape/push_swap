@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fill_stack_b.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/20 21:12:01 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/30 02:41:36 by Nik              ###   ########.fr       */
+/*   Updated: 2019/08/30 14:45:01 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ int		push_nbr_from_b(int *stack_a, int *stack_b)
 		return (0);
 	if (B_TOP > A_BOTTOM && B_TOP < A_TOP)
 		totle_commander("pa", stack_a, stack_b);
-	else if (stack_b[B_LEN - 1] > A_BOTTOM && stack_b[B_LEN - 1] < A_TOP && B_LEN > 1)
+	else if (stack_b[B_LEN - 1] > A_BOTTOM &&\
+	stack_b[B_LEN - 1] < A_TOP && B_LEN > 1)
 	{
 		totle_commander("rb", stack_a, stack_b);
 		totle_commander("pa", stack_a, stack_b);
