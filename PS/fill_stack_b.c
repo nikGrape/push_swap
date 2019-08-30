@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clean_stack_a.c                                    :+:      :+:    :+:   */
+/*   fill_stack_b.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/20 21:12:01 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/28 11:15:33 by Nik              ###   ########.fr       */
+/*   Updated: 2019/08/29 13:15:56 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,8 @@ void	fill_stack_b(int *stack_a, int *stack_b)
 {
 	while (!is_a_sorted(stack_a))
 	{
-		while (push_nbr_from_b(stack_a, stack_b));
+		while (push_nbr_from_b(stack_a, stack_b))
+			;
 		if (is_in_right_order(stack_a))
 			totle_commander("ra", stack_a, stack_b);
 		else if (does_sa_work(stack_a, stack_b))

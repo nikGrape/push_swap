@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotation.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/29 00:59:43 by Nik               #+#    #+#             */
-/*   Updated: 2019/08/29 01:28:58 by Nik              ###   ########.fr       */
+/*   Updated: 2019/08/29 13:14:16 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,4 @@ void		rotation(int *stack_a, int *stack_b, int index)
 		b_rotation(stack_a, stack_b, b_steps);
 		a_rotation(stack_a, stack_b, a_steps);
 	}
-	
 }
-
-

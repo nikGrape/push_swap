@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   help.c                                             :+:      :+:    :+:   */
+/*   man.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 15:24:34 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/20 16:36:18 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/08/29 16:46:54 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	print_help(void)
+void	print_man(void)
 {
 	ft_printf("sa/sb/ss - swap the first two numbers in the stack a/b/both\n");
 	ft_printf("pa - push the first number from stack b to stack a\n");

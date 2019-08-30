@@ -6,7 +6,7 @@
 /*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 13:32:28 by Nik               #+#    #+#             */
-/*   Updated: 2019/08/21 16:33:45 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/08/29 17:23:06 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 static int	is_number(char *s)
 {
+	if (*s == '-')
+		s++;
 	while (*s)
 	{
 		if (!ft_isdigit(*s))

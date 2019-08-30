@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tourn_counter.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/26 13:39:21 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/28 20:54:19 by Nik              ###   ########.fr       */
+/*   Updated: 2019/08/29 13:15:18 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		turns_for_a_rotation(int *stack_a, int nbr)
 			return (i > A_LEN / 2) ? (A_LEN - (i - 1)) : i - 1;
 		i--;
 	}
-	return 9000;
+	return (9000);
 }
 
 int		turn_counter(int *stack_a, int *stack_b)
@@ -44,7 +44,7 @@ int		turn_counter(int *stack_a, int *stack_b)
 	int	*turns;
 	int a;
 	int b;
-	
+
 	if (B_LEN < 2)
 		return (B_LEN);
 	turns = init_b(B_LEN + 1);

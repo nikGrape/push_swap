@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   duplicates_check.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 11:20:00 by Nik               #+#    #+#             */
-/*   Updated: 2019/08/28 10:52:18 by Nik              ###   ########.fr       */
+/*   Updated: 2019/08/29 15:28:29 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-static int		is_duplicate(int n, int *arr)
+static int		is_duplicate(int n, int *stack)
 {
 	int i;
 
-	i = arr[0];
+	i = LEN;
 	while (i > 0)
 	{
-		if (arr[i] == n)
+		if (stack[i] == n)
 			return (1);
 		i--;
 	}
@@ -29,14 +29,11 @@ static int		is_duplicate(int n, int *arr)
 static void		del_duplicate(int *stack, int num)
 {
 	while (++num <= LEN)
-	{
 		stack[num - 1] = stack[num];
-	}
-	stack[num] = 0;
 	LEN--;
 }
 
-static int		duplicate_hendler(int *stack, int num)
+static int		get_answer(void)
 {
 	char *answer;
 
@@ -46,8 +43,8 @@ static int		duplicate_hendler(int *stack, int num)
 	{
 		if (!ft_strcmp(answer, "yes"))
 		{
-			del_duplicate(stack, num);
-			break ;
+			free(answer);
+			return (1);
 		}
 		else if (!ft_strcmp(answer, "no"))
 		{
@@ -58,34 +55,30 @@ static int		duplicate_hendler(int *stack, int num)
 		ft_printf("would you like to del it (yes/no)\t");
 		free(answer);
 	}
-	free(answer);
-	return (1);
+	return (0);
 }
 
 void			duplicates_check(int *stack)
 {
 	int		*new;
 	int		i;
-	int		num;
 	int		answer;
 
 	i = 1;
 	answer = 0;
-	new = init_b(LEN);
+	new = init_b(LEN + 1);
 	while (i <= LEN)
 	{
 		if (is_duplicate(stack[i], new))
 		{
 			if (!answer)
-				answer = duplicate_hendler(stack, i);
-			else
-				del_duplicate(stack, i);
+				answer = get_answer();
+			del_duplicate(stack, i);
 		}
 		else
 		{
 			new[0]++;
 			new[new[0]] = stack[i];
-			num = stack[i];
 			i++;
 		}
 	}

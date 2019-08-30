@@ -6,7 +6,7 @@
 /*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 12:08:53 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/21 17:25:31 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/08/29 17:23:33 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int		main(int argc, char **argv)
 	ft_printf("%s\n", is_sorted(stack_a, stack_b) ?\
 	"{green}OK{eoc}" : "{red}KO{eoc}");
 	ft_printf("steps: %d\n", steps);
+	free(stack_a);
+	free(stack_b);
 }
 
 int		get_command(int *stack_a, int *stack_b)
@@ -43,13 +45,14 @@ int		get_command(int *stack_a, int *stack_b)
 	{
 		if (!ft_strcmp(cmd, "end"))
 			break ;
-		if (!ft_strcmp(cmd, "help"))
+		if (!ft_strcmp(cmd, "man"))
 		{
-			print_help();
+			print_man();
 			continue ;
 		}
 		steps += multi_commander(cmd, stack_a, stack_b);
 		print_stack(stack_a, stack_b, steps);
+		free(cmd);
 	}
 	return (steps);
 }
