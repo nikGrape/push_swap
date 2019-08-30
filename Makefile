@@ -6,7 +6,7 @@
 #    By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/13 01:31:26 by Nik               #+#    #+#              #
-#    Updated: 2019/08/28 18:12:28 by Nik              ###   ########.fr        #
+#    Updated: 2019/08/30 02:22:27 by Nik              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ fclean: clean
 
 re: fclean all
 
-push:
+push_swap:
 	gcc -o $(PUSH_SWAP) $(FLAGS) $(SRCS2) $(INCLUDES)
 
 checker:

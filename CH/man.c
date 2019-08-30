@@ -6,11 +6,18 @@
 /*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 15:24:34 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/29 23:09:52 by Nik              ###   ########.fr       */
+/*   Updated: 2019/08/30 02:15:53 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+
+void	usage(void)
+{
+	ft_printf("usage: checker -e -v -g 5 4 3 2 ...\n");
+	ft_printf("-e  error hendling\n-v  visual mode\n-g  game mode");
+	exit(1);
+}
 
 void	print_man(void)
 {

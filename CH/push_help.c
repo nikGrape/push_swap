@@ -6,7 +6,7 @@
 /*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/29 21:32:41 by Nik               #+#    #+#             */
-/*   Updated: 2019/08/29 23:07:42 by Nik              ###   ########.fr       */
+/*   Updated: 2019/08/30 02:01:59 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int		print_msg(int msg)
 		ft_printf("{green}Comon man, suck it up!:\n");
 	else
 	{
-		ft_printf("{green}OK, this is my solution:\n");
+		ft_printf("{green}OK, this is my idea:\n");
 		return (-msg);
 	}
 	return (1);
@@ -42,8 +42,11 @@ void	push_help(int *stack_a, int *stack_b)
 	copy_a = copy_stack(stack_a, A_LEN + B_LEN);
 	copy_b = copy_stack(stack_b, A_LEN + B_LEN);
 	msg += print_msg(msg);
-	fill_stack_b(copy_a, copy_b);
-	stack_sort(copy_a, copy_b);
+	while (!is_sorted(copy_a, copy_b))
+	{
+		fill_stack_b(copy_a, copy_b);
+		stack_sort(copy_a, copy_b);
+	}
 	ft_printf("{eoc}");
 	free(copy_a);
 	free(copy_b);

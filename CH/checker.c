@@ -6,7 +6,7 @@
 /*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 12:08:53 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/29 23:31:07 by Nik              ###   ########.fr       */
+/*   Updated: 2019/08/30 02:16:55 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,10 @@ int		main(int argc, char **argv)
 	int		i;
 
 	if (argc < 2)
-		ft_error("usage: checker -e -v -g 5 4 3 2 ...\n\
-		-e  error hendling\n-v  visual mode\n-g  game mode");
+		usage();
 	i = flag_analizer(argv, &flags);
 	if (!*(argv += i))
-		ft_error("usage: checker -e -v -g 5 4 3 2 ...\n\
-		-e  error hendling\n-v  visual mode\n-g  game mode");
+		usage();
 	stack_a = init_a(argc - i, argv, flags.e);
 	stack_b = init_b(argc);
 	if (flags.g)
