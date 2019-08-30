@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   rotation.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/29 00:59:43 by Nik               #+#    #+#             */
-/*   Updated: 2019/08/29 13:14:16 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/08/29 22:01:26 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "utils.h"
 
 int			get_a_steps(int *stack_a, int nbr)
 {

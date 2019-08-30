@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 12:07:35 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/29 16:47:00 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/08/29 21:34:21 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@
 # include "../libft/libft.h"
 # include "../utils/utils.h"
 
-int		get_command(int *stack_a, int *stack_b);
-void	print_man();
+int		get_command(int *stack_a, int *stack_b, t_push flags);
+void	print_man(void);
 int		multi_commander(char *cmd, int *stack_a, int *stack_b);
+void	push_help(int *stack_a, int *stack_b);
 
 #endif

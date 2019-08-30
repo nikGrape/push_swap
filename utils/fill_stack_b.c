@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   fill_stack_b.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/20 21:12:01 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/29 13:15:56 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/08/29 22:02:33 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "utils.h"
 
 int		is_in_right_order(int *stack_a)
 {
@@ -39,6 +39,8 @@ int		is_a_sorted(int *stack_a)
 
 int		push_nbr_from_b(int *stack_a, int *stack_b)
 {
+	if (!B_LEN)
+		return (0);
 	if (B_TOP > A_BOTTOM && B_TOP < A_TOP)
 		totle_commander("pa", stack_a, stack_b);
 	else if (stack_b[B_LEN - 1] > A_BOTTOM && stack_b[B_LEN - 1] < A_TOP)

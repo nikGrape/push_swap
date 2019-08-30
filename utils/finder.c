@@ -6,11 +6,11 @@
 /*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/20 23:44:07 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/28 10:55:46 by Nik              ###   ########.fr       */
+/*   Updated: 2019/08/29 22:01:12 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "utils.h"
 
 int		find_max(int *stack, int index)
 {

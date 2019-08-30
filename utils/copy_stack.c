@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   copy_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/12 12:10:07 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/29 22:00:03 by Nik              ###   ########.fr       */
+/*   Created: 2019/08/29 22:05:28 by Nik               #+#    #+#             */
+/*   Updated: 2019/08/29 23:24:16 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "utils.h"
 
-# include "../utils/utils.h"
+int		*copy_stack(int *stack, int size)
+{
+	int *copy;
+	int i;
 
-#endif
+	i = 0;
+	copy = init_b(size + 1);
+	while (i <= LEN)
+	{
+		copy[i] = stack[i];
+		i++;
+	}
+	return (copy);
+}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   duplicates_check.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 11:20:00 by Nik               #+#    #+#             */
-/*   Updated: 2019/08/29 15:28:29 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/08/29 20:51:19 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static int		get_answer(void)
 	return (0);
 }
 
-void			duplicates_check(int *stack)
+void			duplicates_check(int *stack, int err_flag)
 {
 	int		*new;
 	int		i;
@@ -71,6 +71,8 @@ void			duplicates_check(int *stack)
 	{
 		if (is_duplicate(stack[i], new))
 		{
+			if (!err_flag)
+				ft_error("input contains duplicates");
 			if (!answer)
 				answer = get_answer();
 			del_duplicate(stack, i);

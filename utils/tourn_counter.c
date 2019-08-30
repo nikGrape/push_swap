@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   tourn_counter.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/26 13:39:21 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/29 13:15:18 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/08/29 22:01:52 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "utils.h"
 
 int		turns_for_b_rotation(int *stack_b, int nbr_from_b)
 {

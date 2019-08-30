@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 15:14:43 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/29 15:30:11 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/08/29 22:45:48 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,22 @@
 # define UTILS_H
 
 # include "../libft/libft.h"
+# define COMMANDS "sa sb ss pa pb ra rb rr rra rrb rrr"
 # define LEN stack[0]
 # define A_LEN stack_a[0]
 # define B_LEN stack_b[0]
+# define A_TOP stack_a[A_LEN]
+# define A_BOTTOM stack_a[1]
+# define B_TOP stack_b[B_LEN]
+# define B_BOTTOM stack_b[1]
 
+typedef struct
+{
+	int	e;
+	int	g;
+	int	v;
+	int	c;
+}		t_push;
 /*
 **	swap two first elements
 */
@@ -49,15 +61,30 @@ void	rra(int *stack_a);
 void	rrb(int *stack_b);
 void	rrr(int *stack_a, int *stack_b);
 
-int		*init_a(int len, char **arr);
-void	duplicates_check(int *stack);
-char	*input_checker(char *s);
+int		*init_a(int len, char **arr, int err_flag);
+void	duplicates_check(int *stack, int err_flag);
+char	*input_checker(char *s, int err_flag);
 int		*init_b(int len);
 
 void	print_stack(int *stack_a, int *stack_b, int steps);
+int		*copy_stack(int *stack, int size);
 int		is_sorted(int *stack_a, int *stack_b);
 
 int		commander(char *cmd, int *stack_a, int *stack_b);
 int		is_command(char *cmd);
+void	ft_error(char *message);
+int		flag_analizer(char **argv, t_push *flags);
+/*
+**	PUSH_SWAP
+*/
+void	stack_sort(int *stack_a, int *stack_b);
+void	fill_stack_b(int *stack_a, int *stack_b);
+int		get_index_of_best_nbr_to_push(int *stack_a, int *stack_b);
+int		is_in_right_order(int *stack_a);
+int		find_min(int *stack, int index);
+int		find_max(int *stack, int index);
+void	totle_commander(char *cmd, int *stack_a, int *stack_b);
+int		does_sa_work(int *stack_a, int *stack_b);
+void	rotation(int *stack_a, int *stack_b, int index);
 
 #endif

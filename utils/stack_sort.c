@@ -6,11 +6,11 @@
 /*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/26 15:58:18 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/29 01:34:27 by Nik              ###   ########.fr       */
+/*   Updated: 2019/08/29 22:01:33 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "utils.h"
 
 void	push_best_nbr(int *stack_a, int *stack_b)
 {

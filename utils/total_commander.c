@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   total_commander.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/12 12:10:07 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/29 22:00:03 by Nik              ###   ########.fr       */
+/*   Created: 2019/08/21 14:23:17 by vinograd          #+#    #+#             */
+/*   Updated: 2019/08/29 22:01:45 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "utils.h"
 
-# include "../utils/utils.h"
-
-#endif
+void	totle_commander(char *cmd, int *stack_a, int *stack_b)
+{
+	ft_printf("%s\n", cmd);
+	commander(cmd, stack_a, stack_b);
+}

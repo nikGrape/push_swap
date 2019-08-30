@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 13:32:28 by Nik               #+#    #+#             */
-/*   Updated: 2019/08/29 17:23:06 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/08/29 20:51:09 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,12 +75,16 @@ static char	*num_convert(char *s)
 		return (get_valid(s));
 }
 
-char		*input_checker(char *s)
+char		*input_checker(char *s, int err_flag)
 {
 	char *ret;
 
 	ret = s;
 	if (!is_number(s))
+	{
+		if (!err_flag)
+			ft_error("invalid input");
 		ret = num_convert(s);
+	}
 	return (ret);
 }

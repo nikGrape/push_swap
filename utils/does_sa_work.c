@@ -6,11 +6,11 @@
 /*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/21 15:08:05 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/28 10:57:46 by Nik              ###   ########.fr       */
+/*   Updated: 2019/08/29 22:00:09 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "utils.h"
 
 static int	is_in_right_order_two_first_nbrs(int *stack_a)
 {

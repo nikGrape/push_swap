@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   total_commander.c                                  :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/21 14:23:17 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/29 12:30:37 by vinograd         ###   ########.fr       */
+/*   Created: 2019/08/29 20:46:58 by Nik               #+#    #+#             */
+/*   Updated: 2019/08/29 20:48:18 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "utils.h"
 
-void	totle_commander(char *cmd, int *stack_a, int *stack_b)
+void	ft_error(char *message)
 {
-	ft_printf("%s\n", cmd);
-	commander(cmd, stack_a, stack_b);
+	ft_printf("%s\n", message);
+	exit(1);
 }
