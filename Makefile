@@ -6,7 +6,7 @@
 #    By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/13 01:31:26 by Nik               #+#    #+#              #
-#    Updated: 2019/08/30 02:22:27 by Nik              ###   ########.fr        #
+#    Updated: 2019/08/30 21:46:53 by Nik              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCS2=PS/*.c
 
 INCLUDES=libft/libft.a utils/*.c
 
-FLAGS=-Werror -Wextra -Wall
+FLAGS=-Werror -Wextra -Wall -fsanitize=address
 
 all: $(NAME)
 	@make -C libft/ all

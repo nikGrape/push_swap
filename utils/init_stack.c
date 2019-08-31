@@ -6,7 +6,7 @@
 /*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 18:26:39 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/29 20:52:16 by Nik              ###   ########.fr       */
+/*   Updated: 2019/08/30 21:49:58 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		*init_a(int len, char **arr, int err_flag)
 	char	*tmp;
 	int		i;
 
-	stack = (int *)malloc(sizeof(int) * len + 1);
+	stack = (int *)malloc(sizeof(int) * (len + 1));
 	LEN = len;
 	i = 1;
 	while (i <= LEN)
