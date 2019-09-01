@@ -6,7 +6,7 @@
 /*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 18:26:04 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/14 11:13:06 by Nik              ###   ########.fr       */
+/*   Updated: 2019/08/31 14:46:06 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,13 @@ typedef struct	s_arr
 }				t_arr;
 
 int				ft_atoi(const char *s);
+long			ft_atoi_long(char *s);
 void			ft_bzero(void *s, size_t n);
 int				ft_isalnum(int i);
 int				ft_isalpha(int c);
 int				ft_isascii(int c);
 int				ft_isdigit(int c);
+int				ft_isinteger(char *nbr);
 int				ft_isprint(int c);
 void			*ft_memccpy(void *restrict dst, const void *restrict src, \
 		int c, size_t n);
@@ -133,5 +135,6 @@ char			*ft_stradd(char *str, char ch);
 */
 int				get_next_line(const int fd, char **line);
 int				ft_printf(const char *format, ...);
-
+int				ft_arrayfree(char **arr);
+int				ft_arraylen(char **arr);
 #endif

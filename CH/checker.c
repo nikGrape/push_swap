@@ -6,7 +6,7 @@
 /*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 12:08:53 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/30 02:16:55 by Nik              ###   ########.fr       */
+/*   Updated: 2019/08/31 14:34:33 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		main(int argc, char **argv)
 	if (!*(argv += i))
 		usage();
 	stack_a = init_a(argc - i, argv, flags.e);
-	stack_b = init_b(argc);
+	stack_b = init_b(A_LEN + 1);
 	if (flags.g)
 		print_man();
 	if (flags.v)

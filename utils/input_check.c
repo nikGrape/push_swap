@@ -6,7 +6,7 @@
 /*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 13:32:28 by Nik               #+#    #+#             */
-/*   Updated: 2019/08/29 20:51:09 by Nik              ###   ########.fr       */
+/*   Updated: 2019/08/31 14:15:47 by Nik              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static char	*get_valid(char *s)
 	{
 		if (is_number(new))
 			return (new);
-		if (!ft_strcmp(new, "skip"))
+		if (ft_strequ(new, "skip"))
 		{
 			free(new);
 			return (NULL);
@@ -84,7 +84,10 @@ char		*input_checker(char *s, int err_flag)
 	{
 		if (!err_flag)
 			ft_error("invalid input");
-		ret = num_convert(s);
+		if (!(ret = num_convert(s)))
+			return (NULL);
 	}
+	if (!ft_isinteger(ret))
+		ft_error("some arguments are bigger than an integer");
 	return (ret);
 }
