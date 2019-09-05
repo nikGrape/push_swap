@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 15:14:43 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/29 22:45:48 by Nik              ###   ########.fr       */
+/*   Updated: 2019/09/04 20:41:14 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 **	arr		 0	1 2 3 4 5 6 ... 10
 **	stack	len|1 2 3 4 5 6 ... 10 <-top
 **	expmpl	  7|1 2 3 4 5 6 9 (1 is the bottob of the stack, 9 is the top)
- */
+*/
 
 #ifndef UTILS_H
 # define UTILS_H
@@ -26,6 +26,7 @@
 # define A_LEN stack_a[0]
 # define B_LEN stack_b[0]
 # define A_TOP stack_a[A_LEN]
+# define A_SEC	stack_a[A_LEN - 1]
 # define A_BOTTOM stack_a[1]
 # define B_TOP stack_b[B_LEN]
 # define B_BOTTOM stack_b[1]
@@ -81,6 +82,7 @@ void	stack_sort(int *stack_a, int *stack_b);
 void	fill_stack_b(int *stack_a, int *stack_b);
 int		get_index_of_best_nbr_to_push(int *stack_a, int *stack_b);
 int		is_in_right_order(int *stack_a);
+int		is_a_sorted(int *stack_a);
 int		find_min(int *stack, int index);
 int		find_max(int *stack, int index);
 void	totle_commander(char *cmd, int *stack_a, int *stack_b);

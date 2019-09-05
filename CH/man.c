@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   man.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Nik <Nik@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 15:24:34 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/30 02:15:53 by Nik              ###   ########.fr       */
+/*   Updated: 2019/09/04 20:56:15 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	usage(void)
 {
 	ft_printf("usage: checker -e -v -g 5 4 3 2 ...\n");
-	ft_printf("-e  error hendling\n-v  visual mode\n-g  game mode");
+	ft_printf("-e  error hendling\n-v  visual mode\n-g  game mode\n");
 	exit(1);
 }
 

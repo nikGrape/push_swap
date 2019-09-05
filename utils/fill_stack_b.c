@@ -6,7 +6,7 @@
 /*   By: vinograd <vinograd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/20 21:12:01 by vinograd          #+#    #+#             */
-/*   Updated: 2019/08/30 14:45:01 by vinograd         ###   ########.fr       */
+/*   Updated: 2019/09/04 20:39:44 by vinograd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,15 @@ int		is_in_right_order(int *stack_a)
 
 	max = find_max(stack_a, 0);
 	min = find_min(stack_a, 0);
-	return (A_TOP == max || A_TOP == min ||
-		(A_TOP > A_BOTTOM && A_TOP < stack_a[A_LEN - 1]));
-}
-
-int		is_a_sorted(int *stack_a)
-{
-	int i;
-
-	i = A_LEN;
-	while (i > 1)
+	if (A_TOP == min && A_SEC == max)
+		totle_commander("sa", stack_a, NULL);
+	if (A_TOP == max && A_BOTTOM == min)
 	{
-		if (stack_a[i] >= stack_a[i - 1])
-			return (0);
-		i--;
+		totle_commander("rra", stack_a, NULL);
+		totle_commander("sa", stack_a, NULL);
 	}
-	return (1);
+	return (A_TOP == max || A_TOP == min ||
+		(A_TOP > A_BOTTOM && A_TOP < A_SEC));
 }
 
 int		push_nbr_from_b(int *stack_a, int *stack_b)
